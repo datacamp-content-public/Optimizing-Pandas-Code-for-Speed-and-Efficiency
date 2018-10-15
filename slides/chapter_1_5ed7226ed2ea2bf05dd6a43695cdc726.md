@@ -188,12 +188,12 @@ Many times, after grouping the entries of a Dataframe according to a specific fe
 
 
 ---
-## Insert title here...
+## Filtration using groupby
 
 ```yaml
 type: "TwoRows"
 key: "eb8c37b962"
-center_content: false
+center_content: true
 ```
 
 `@part1`
@@ -217,11 +217,12 @@ If we compare the time taken for each method, we can clearly see that using the 
 
 
 ---
-## Transformation using groupby
+## Transfromation using groupby
 
 ```yaml
-type: "TwoColumns"
-key: "9c0086148e"
+type: "FullCodeSlide"
+key: "0155f7babd"
+center_content: true
 ```
 
 `@part1`
@@ -240,17 +241,40 @@ print(trans_group.std())
 ```
 
 
+`@script`
+As a last operation, we will transformed a grpouped obejct according to a transformaton rule that applies to each feature of the grouped object. We can use this operation to normalize the entries of a DataFrame group-wise, by defining the normalizing function for each feature by substracting the mean and dividing by the standard deviation.
+
+
+---
+## Transformation using groupby
+
+```yaml
+type: "TwoRows"
+key: "264dac5c8a"
+center_content: true
+```
+
+`@part1`
+Mean
+
+| target |      sepal length (cm) |   sepal width (cm) |   petal length (cm) |   petal width (cm) | 
+|--------|------------------------|--------------------|---------------------|--------------------| 
+| 0.0    |       1.8453e-15       |      -1.5609e-15   |        1.2767e-16   |       9.0372e-16   | 
+| 1.0    |        1.1435e-16      |      -1.4865e-15   |        4.1966e-16   |       8.2045e-16   | 
+| 2.0    |        2.7489e-15      |       7.2802e-16   |        6.5281e-16   |       6.4170e-16   |
+
+
 `@part2`
-| target     | sepal length (cm)   | sepal width (cm)     | petal length (cm)   | petal width (cm) | 
-|------------|---------------------|----------------------|---------------------|------------------| 
-| 0.0        | 1.845399e-15        | -1.560974e-15        | 1.276756e-16        | 9.037215e-16     | 
-| 1.0        | 1.143530e-16        | -1.486589e-15        |  4.196643e-16       | 8.204548e-16     | 
-| 2.0        | 2.748912e-15        | 7.280287e-16         | 6.528111e-16        | 6.417089e-16     |
+Standard Deviation
+
+| target |     sepal length (cm) |   sepal width (cm) |   petal length (cm) |   petal width (cm) | 
+|--------|-----------------------|--------------------|---------------------|--------------------| 
+| 0.0    |                 1.0   |                1.0 |                 1.0 |                1.0 | 
+| 1.0    |                 1.0   |                1.0 |                 1.0 |                1.0 | 
+| 2.0    |                 1.0   |                1.0 |                 1.0 |                1.0 |
 
 
 `@script`
-As a last operation, we will transformed a grpuped obejct according to a transformaton rule that applies to each feature of the grouped object. We can use this operation to normalize the entries of a DataFrame group-wise, by defining the normalizing function for each feature by substracting the mean and dividing by the standard deviation.
-
 As you can see, for each of the groups, we have a (almost) zero mean and a standard deviation equal to one, for each feature of the iris dataset
 
 
