@@ -61,7 +61,7 @@ success_msg("Some praise! Then reinforce a learning objective from the exercise.
 
 ---
 
-## Insert exercise title here
+## Perform data manipulation for different groups using the _groupby_ function
 
 ```yaml
 type: VideoExercise
