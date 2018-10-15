@@ -98,22 +98,22 @@ print(iris.iloc[target_0].apply(
 
 
 `@part2`
-| sepal_length | sepal_width | petal_length | petal_width | species | 
-|--------------|-------------|--------------|-------------|---------| 
-| 5.1          | 3.5         | 1.4          | 0.2         | setosa  | 
-| 4.9          | 3.0         | 1.4          | 0.2         | setosa  | 
-| 4.7          | 3.2         | 1.3          | 0.2         | setosa  | 
-| 4.6          | 3.1         | 1.5          | 0.2         | setosa  | 
-| 5.0          | 3.6         | 1.4          | 0.2         | setosa  | 
-| 5.4          | 3.9         | 1.7          | 0.4         | setosa  | 
-| 4.6          | 3.4         | 1.4          | 0.3         | setosa  | 
-| 5.0          | 3.4         | 1.5          | 0.2         | setosa  |
+```{python}
+iris.groupby('target').mean()
+```
+| target         | sepal length (cm) | sepal width (cm) | petal length (cm) | petal width (cm) | 
+|----------------|-------------------|------------------|-------------------|------------------|
+| 0.0            | 5.006             | 3.418            | 1.464             | 0.244            |
+| 1.0            | 5.936             | 2.770            | 4.260             | 1.326            | 
+| 2.0            | 6.588             | 2.974            | 5.552             | 2.026
 
 
 `@script`
 Let's take as an example, the iris dataset, which consists of 150 entries, each one representing a different flower and 5 features which gives a quantitative characteristic to each flower, plus the classification of each entry in each of the three available categories. 
 
 If we want to find the mean for all the features in each category, we can use the tricks we discussed in the previous chapter; we can iterate through our DataFrame using the iterrows function, find the indices that correspond to each class, and then take the mean for each feature.
+
+While this seem efficient, Pandas can group the entries of a DataFrame according to different values of a specific fearure. This can be done using the groupby function, in just one line of code!
 
 
 ---
