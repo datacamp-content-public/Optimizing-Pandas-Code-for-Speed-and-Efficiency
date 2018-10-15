@@ -69,7 +69,35 @@ As we discussed in previous parts of the course, the key to speed up our code an
 
 
 ---
-## Aggregation using _groupby_
+## Aggregation using groupby (1)
+
+```yaml
+type: "FullSlide"
+key: "9db854d8ca"
+center_content: true
+```
+
+`@part1`
+The iris dataset
+
+| index | sepal length (cm) | sepal width (cm) | petal length (cm) | petal width (cm) | target | 
+|-------|-------------------|------------------|-------------------|------------------|--------| 
+| 0     | 5.1               | 3.5              | 1.4               | 0.2              | 0.0    | 
+| 1     | 4.9               | 3.0              | 1.4               | 0.2              | 0.0    | 
+| 2     | 4.7               | 3.2              | 1.3               | 0.2              | 0.0    | 
+| 3     | 4.6               | 3.1              | 1.5               | 0.2              | 0.0    | 
+| 4     | 5.0               | 3.6              | 1.4               | 0.2              | 0.0    | 
+| 5     | 5.4               | 3.9              | 1.7               | 0.4              | 0.0    | 
+| 6     | 4.6               | 3.4              | 1.4               | 0.3              | 0.0    | 
+| 7     | 5.0               | 3.4              | 1.5               | 0.2              | 0.0    |
+
+
+`@script`
+Let's take as an example, the iris dataset, which consists of 150 entries, each one representing a different flower and 5 features which gives a quantitative characteristic to each flower, plus the classification of each entry in each of the three available categories.
+
+
+---
+## Aggregation using _groupby_ 
 
 ```yaml
 type: "TwoColumns"
@@ -77,6 +105,8 @@ key: "9f8544f292"
 ```
 
 `@part1`
+Without groupby
+
 ```{python}
 target_0 = []
 target_1 = []
@@ -98,6 +128,8 @@ print(iris.iloc[target_0].apply(
 
 
 `@part2`
+Using groupby
+
 ```{python}
 iris.groupby('target').mean()
 ```
@@ -105,47 +137,18 @@ iris.groupby('target').mean()
 |----------------|-------------------|------------------|-------------------|------------------|
 | 0.0            | 5.006             | 3.418            | 1.464             | 0.244            |
 | 1.0            | 5.936             | 2.770            | 4.260             | 1.326            | 
-| 2.0            | 6.588             | 2.974            | 5.552             | 2.026
+| 2.0            | 6.588             | 2.974            | 5.552             | 2.026 
+ 
+```{python}
+iris.groupby('target').aggregate
+(['mean','sum','min','max'])
+```
 
 
 `@script`
-Let's take as an example, the iris dataset, which consists of 150 entries, each one representing a different flower and 5 features which gives a quantitative characteristic to each flower, plus the classification of each entry in each of the three available categories. 
-
 If we want to find the mean for all the features in each category, we can use the tricks we discussed in the previous chapter; we can iterate through our DataFrame using the iterrows function, find the indices that correspond to each class, and then take the mean for each feature.
 
 While this seem efficient, Pandas can group the entries of a DataFrame according to different values of a specific fearure. This can be done using the groupby function, in just one line of code!
-
-
----
-## Filtration using groupby
-
-```yaml
-type: "TwoColumns"
-key: "aff57d5d25"
-center_content: false
-```
-
-`@part1`
-| "total_bill" | "tip" |  "smoker" | "day" | "time"   | 
-|--------------|-------|----------|----------|-------|----------
-| 16.99        | 1.01  |  "No"     | "Sun" | "Dinner" |
-| 10.34        | 1.66  |  "No"     | "Sun" | "Dinner" | 
-| 21.01        | 3.5   |  "No"     | "Sun" | "Dinner" |
-| 23.68        | 3.31  | "No"     | "Sun" | "Dinner" | 
-| 24.59        | 3.61  | "No"     | "Sun" | "Dinner" |
-| 25.29        | 4.71  |  "No"     | "Sun" | "Dinner" |
-
-
-`@part2`
-
-
-
-`@script`
-Many times, after grouping the entries of a Dataframe according to a specific feature, we are interested in including only a subset of those groups, based on some conditions. This could be:
-
-- Number of missing values
-- The mean of a specific feature is too low
-- Etc...
 
 
 ---
@@ -168,7 +171,6 @@ center_content: true
 
 `@part2`
 ```{python}
-# Using list comprehension
 t=[restaurant.loc[df['day'] == i]['tip'] for i in restaurant['day'].unique() 
     if restaurant.loc[df['day'] == i]['total_bill'].mean()>20]
 fin = t[0]
@@ -279,6 +281,38 @@ As you can see, for each of the groups, we have a (almost) zero mean and a stand
 
 
 ---
+## Filling missing values using groupby
+
+```yaml
+type: "TwoRows"
+key: "a6378453e9"
+```
+
+`@part1`
+```{python}
+df.groupby('time')['total_bill'].mean()
+```
+|        |            | 
+|--------|------------| 
+| Dinner |  20.797159 | 
+| Lunch  |  17.168676 |
+
+
+`@part2`
+```{python}
+missing_tranf = lambda x: x.fillna(x.mean())
+transformed_total_bill = restaurant.groupby('time')['total_bill'].transform(
+missing_tranf)
+```
+
+
+`@script`
+Another usefull application of the transform function is to fill the missing values with a group specific function, such as the mean and the median. In the previous example with the restaurant, assume we have some missing values. In particular, we have not recorded how much some tables have payed.
+
+If we decide to replace the missing entries, it would be more sensible to replace with the mean table according to each meal type (dinner or lunch), as we expect people to pay more for their dinner than for their lunch.
+
+
+---
 ## Final Slide
 
 ```yaml
@@ -287,5 +321,5 @@ key: "c8c9ac8009"
 ```
 
 `@script`
-
+Now that you have an overview of what the family of groupby functions can do, let's explore more examples and fascinating applications
 
