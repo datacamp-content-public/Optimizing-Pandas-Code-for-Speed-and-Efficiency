@@ -1,4 +1,4 @@
-# **Course Title**<br/>by **Course Author**
+# **Optimizing Pandas Code for Speed and Efficiency**<br/>by **Leonidas Souliotisr**
 
 README and sample lesson deadline: YYYY-MM-DD 
 
