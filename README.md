@@ -1,4 +1,4 @@
-# **Optimizing Pandas Code for Speed and Efficiency**<br/>by **Leonidas Souliotisr**
+# **Optimizing Pandas Code for Speed and Efficiency**<br/>by **Leonidas Souliotis**
 
 README and sample lesson deadline: YYYY-MM-DD 
 
