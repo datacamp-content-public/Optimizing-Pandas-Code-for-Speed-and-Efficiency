@@ -156,7 +156,7 @@ A typical lesson is comprised of:
 >  * A learning objective: Integrate numpy properties of pandas to improve further speed improvement on applying functions to Pandas series (or whole DataFrames) using the numpy library
 
 >- Chapter 4 - Perform data manipulation for different groups using the groupby function
->  *Lesson 4.1 - Aggregation using groupby
+>  * Lesson 4.1 - Aggregation using groupby
 >    * A learning objective: Group data according to specific attributes or     characteristics and compute a summary statistic (or statistics) for each group efficiently (e.g. counts/sum/mean)
 >  * Lesson 4.2 - Data transformation using groupby
 >   * A learning objective: Perform some group-specific computations and manipulations (e.g. standardization/NA imputation ) efficiently
