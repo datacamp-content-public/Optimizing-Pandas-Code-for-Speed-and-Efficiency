@@ -104,9 +104,8 @@ Terms like "beginner" and "expert" mean different things to different people, so
 
 Choose the appropriate learners for your course by following this link to [learner personas](https://authoring.datacamp.com/courses/design/personas.html)
 
-* Learner persona 1: explanation
-* Learner persona 2: explanation
-* Learner persona 3: explanation
+* Coder Chen: As there is no substantial statistical content in the course, this person's strong coding background would fit the course perfectly
+* Advanced Alex: As this person has already worked with the basic of data science (both in theory and in practice), this course is ideal for this person; as the content of this course is highly applied and can be used to industry
 
 ## Step 3: Course outline
 
@@ -126,55 +125,43 @@ A typical lesson is comprised of:
 
 > Example from a course on interactive data visualization using leaflet
 
-> Chapter 1 - Setting Up Interactive Web Maps
->   * Lesson 1.1 - Introduction to leaflet
->     * A learning objective: Create a basic interactive web map in R using the `leaflet` and `htmlwidgets` packages.
->     * Some functions introduced/used: `leaflet()`, `addTiles()`, `%>%`
->   * Lesson 1.2 - Working with Map tiles
->     * A learning objective: Tweak the base map in `leaflet` using provider tiles, such as those on [OpenStreetMap](https://www.openstreetmap.org/)
->     * Some functions introduced/used: `stringr::str_detect()`, `addProviderTiles()`
->   * Lesson 1.3 - Setting the Default Map View
->     * A learning objective: Create a default map by centering on a certain location, setting a default zoom level, and adding markers or pins to your map.
->     * Some functions introduced/used: `setView()`, `addMarkers()`, `addTiles()`
+> Chapter 1 - Using in-built functions to select columns and rows
+  *Lesson 1.1 - Locate targeted rows
+    *A learning objective:  Locate and select columns of a DataFrame with specific 
+  characteristics 
+  *Lesson 1.2 - Locate targeted rows
+    *A learning objective:  Locate and select rows of a DataFrame based on index with specific characteristics 
+  *Lesson 1.3 - Select random rows or columns 
+    *A learning objective:  Select random rows or columns randomly (or with weights) using pandas in-built functions
+    
+>Chapter 2 - Join DataFrames using concatenate, join and merge
+  *Lesson 2.1 - Concatenate DataFrames
+    *A learning objective:  Stack DataFrames using the concatenate  function and understand how to tune the parameters to deal with the axis and the indices
+  *Lesson 2.2 - Merge DataFrames
+    *A learning objective: Merge DataFrames  in a database style using the merge  function and understand how to tune the parameters to deal with the axis and the indices
+  *Lesson 2.3 - Join DataFrames
+    *A learning objective:  Merge DataFrames with different indices in database style using the join function and understand how to tune the parameters to deal with the axis
+    
+>Chapter 3 - Speed efficiency 
+  *Lesson 3.1 -  Looping with iterrows
+    *A learning objective:  Perform actions for every row of the DataFrame using 
+   the  iterrows function to improve the speed of iterating a DataFrame's rows 
+   compared to crude looping
+  *Lesson 3.2 - Looping with apply
+    *A learning objective: Apply functions to a targeted columns set of a 
+    DataFrame by using the apply function, which will speed up the operations
+  *Lesson 3.3 - Vectorization over Pandas series
+    *A learning objective: Executing operations and apply functions on entire columns, resulting to further speed improvement
+*Lesson 3.4 - Vectorization with NumPy arrays
+  *A learning objective: Integrate numpy properties of pandas to improve further speed improvement on applying functions to Pandas series (or whole DataFrames) using the numpy library
 
-> Chapter 2 - Plotting Points
->   * Lesson 2.1 - Introduction to IPEDS Data
->     * A learning objective: Clean up a map to restore the default view. Create a map step-by-step to gain a better understanding of how your data will dictate the map you create.
->     * Some functions introduced/used: `clearMarkers()`, `clearBounds()`, `count()`, `arrange()`
->   * Lesson 2.2 - Mapping California Colleges
->     * A learning objective: Pan and plot a point on a map using the IPEDS case study.
->     * Some functions introduced/used: `addMarkers()`, `clearMarkers()`, `clearBounds()`,
->   * Lesson 2.3 - Labels and Pop-ups
->     * A learning objective: Center, zoom in, and plot points on the IPEDS map.
->     * Some functions introduced/used: `addTiles()`, `addCircleMarkers()`
->   * Lesson 2.4 - Color Coding Colleges
->     * A learning objective: Enhance the appearance of the IPEDS map by changing the color palette of the markers and adding a map legend.
->     * Some functions introduced/used: `addCircleMarkers()`, `addLegend()`
-
-> Chapter 3 - Groups, Layers, and Extras
->   * Lesson 3.1 - The Leaflet Extras Package
->     * A learning objective: Add search capabilities to your map! Find a location by typing it in a search bar, plus find the name of a location by clicking on a point in your map.
->     * Some functions introduced/used: `addSearchOSM()`, `addReverseSearchOSM()`, `addCircleMarkers()`
->   * Lesson 3.2 - Overlay Groups
->     * A learning objective: Clarify how your data is distributed by adding toggles to group data on your map.
->     * Some functions introduced/used: `dplyr::filter()`, `addLayersControl()`
->   * Lesson 3.3 - Base Groups
->     * A learning objective: Give your user control over their view by adding toggles between base maps.
->     * Some functions introduced/used: `addTiles()`, `addProviderTiles()`, `addLayersControl()`, `setView()`
->   * Lesson 3.4 - Pieces of Flair
->     * A learning objective: Create an advanced and searchable map using special features like clustering.
->     * Some functions introduced/used: `addSearchFeatures()`, `addCircleMarkers()`
-
-> Chapter 4 - Plotting Polygons
->   * Lesson 4.1 - Spatial Data
->     * A learning objective: Define your map boundaries by performing a spatial join.
->     * Some functions introduced/used: `class()`, `slotNames()`, `glimpse()`, `left_join()`
->   * Lesson 4.2 - Mapping Polygons
->     * A learning objective: Perform exploratory data analysis using polygons to examine data missingness.
->     * Some functions introduced/used: `addPolygons()`, `addTiles()`, `base::summary()`
->   * Lesson 4.3 - Putting it All Together
->     * A learning objective: Use interactive web maps to explore and understand the properties of data.
->     * Some functions introduced/used: `slotNames()`, `base::summary()`, `addPolygons()`
+>Chapter 4 - Perform data manipulation for different groups using the groupby function
+  *Lesson 4.1 - Aggregation using groupby
+    * A learning objective: Group data according to specific attributes or     characteristics and compute a summary statistic (or statistics) for each group efficiently (e.g. counts/sum/mean)
+  *Lesson 4.2 - Data transformation using groupby
+   *A learning objective: Perform some group-specific computations and manipulations (e.g. standardization/NA imputation ) efficiently
+   *Lesson 4.3 - Data filtration using groupby
+   *A learning objective: Discard some groups efficiently , according to a group-wise computation that evaluates True or False (e.g. discard data that belongs to groups with only a few members)
 
   
   - [ ] Does each lesson have a clear learning objective?
