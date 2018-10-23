@@ -56,6 +56,7 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 >- groupby, filter, transform
 >- Numpy functions:
 >- mean, sum, min, max, count
+>-matplotlib
 
 ### 4. What terms or jargon will you define?
 
@@ -70,9 +71,9 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 - [ ] Write a list of analogies for concepts, heuristics for best practices, and any other non-technical explanations of things that may be helpful to students _(minimum of two)_.
 
->Example from a course on forecasting product demand. This analogy is likely intuitive to most people.
->
->Signal and noise - It's like trying to hear someone across a crowded room. Remove the noise, and you can easily understand what they are telling you.
+>Merge DataFrames according to indices - It's like trying to assign a feature in an entry that does not exists
+>Brute looping - It's like trying to read each entry of the DataFrame one by one, reading one index per time
+>Groued object - It's like organising the entries of a DataFrame in 'boxes', and each box contains all the entries that share a common value for the selected DataFrame feature
 
 
 
