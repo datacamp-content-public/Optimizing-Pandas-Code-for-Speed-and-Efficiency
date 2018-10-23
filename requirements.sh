@@ -7,10 +7,3 @@ set -e
 pip3 install pandas==0.23.4
 pip3 install matplotlib==2.2.2
 pip3 install numpy==1.15.1 
-
-
-# Include datasets in the image
-
-# DATADIR=/usr/local/share/datasets
-# mkdir -p $DATADIR
-# wget -O $DATADIR/iris.csv http://s3.amazonaws.com/assets.datacamp.com/staging/course_2406/datasets/iris.csv
