@@ -19,7 +19,7 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 ### 1. What problem(s) will students learn how to solve? (minimum of 5 problems)
 
-[//]: <> ( - [ ] Write a list of ideas for problems that the students will encounter in the course. )
+- [ ] Write a list of ideas for problems that the students will encounter in the course
 >- How to select specific columns and rows of a DataFrame
 >- How to select random columns and rows of a DataFrame
 >- How to iterate accross all the rows of a DataFrame efficiently
@@ -33,12 +33,12 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 >Example from our scikit-learn course:
 >
 >- Learn the difference between DataFrame and Series as Pandas objects
->- Learn how to merge and concatinate DataFrames based on index and how to deal with mis
->- Learn to evaluate how well your classification and regression modes perform;
->- Learn best practices in supervised learning, such as splitting into test/train sets and k-fold cross validation;
->- Learn how to improve model performance by both preprocessing your data and regularizing your models.
-
-
+>- Learn how to merge and concatinate DataFrames based on the indices
+>- Learn how to iterate through DataFrames' with alternatives than brute looping
+>- Learn how to apply fucntions in more than one column efficiently
+>- Learn how to group DataFrames according to the values of a specific column (feature)
+>- Learn how to impute the missing values of a grouped object
+>- Learn how to apply fucntions and transformations on a grouped object
 ### 3. What technologies, packages, or functions will students use? Please be exhaustive.
 
 - [ ] Write a list of ideas for technologies that you want to use in the course. Include things like R/Python packages, SQL modules, or Google Sheets add-ons. If there are any important functions, methods, or commands that you want to teach, you can mention them here.
@@ -47,18 +47,14 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 >Example from a course on keras. This example has only a few Python packages and goes into depth on the functions that will be used.
 >
->- keras, pandas, sklearn
->- Keras functions:
->- Dense
->- Concatenate, Subtract, Multiply (operate on two layers)
->- l2
->- Embedding
->- Flatten
->- keras.preprocessing.text.text_to_word_sequence
->- keras.preprocessing.sequence.pad_sequences
->- GRU
->- Bidirectional
-
+>- pandas, numpy
+>- Pandas functions:
+>- loc, iloc, ix
+>- iterrows, apply
+>- merge, concatinate, join
+>- groupby, filter, transform
+>- Numpy functions:
+>- mean, sum, min, max, count
 
 ### 4. What terms or jargon will you define?
 
@@ -66,7 +62,7 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 > Example from a course on experimental design. This has an extensive list of statistical terms.
 >
->Randomization, replication, blocking, Latin Square, Greco-Latin Squares, factorial, ANOVA, T-test, F-test, normality, >qqplot, variance, type I/II error, null/alternative hypothesis, effect size, factor/categorical variable
+>DataFrame, Series, Random sampling, Vectorization, Data transformation
 
 
 ### 5. What analogies or heuristics will you use?
@@ -84,7 +80,9 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 >Example from a course on generalized additive models:
 >
->The difference between prediction intervals and confidence intervals.
+>The difference between Pandas DataFrame and Pandas Series
+>The difference between a function appleid to an object and a function that is part of the class of an object
+>The difference between brute looping and looping efficently using iterrows
 
 
 ### 7. What datasets will you use? 
