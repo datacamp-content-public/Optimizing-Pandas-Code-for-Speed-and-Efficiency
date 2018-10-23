@@ -134,7 +134,7 @@ A typical lesson is comprised of:
 >  *Lesson 1.3 - Select random rows or columns 
 >    *A learning objective:  Select random rows or columns randomly (or with weights) using pandas in-built functions
     
->-Chapter 2 - Join DataFrames using concatenate, join and merge
+>- Chapter 2 - Join DataFrames using concatenate, join and merge
 >  *Lesson 2.1 - Concatenate DataFrames
 >    *A learning objective:  Stack DataFrames using the concatenate  function and understand how to tune the parameters to deal with the axis and the indices
 >  *Lesson 2.2 - Merge DataFrames
@@ -142,7 +142,7 @@ A typical lesson is comprised of:
 >  *Lesson 2.3 - Join DataFrames
 >    *A learning objective:  Merge DataFrames with different indices in database style using the join function and understand how to tune the parameters to deal with the axis
     
->Chapter 3 - Speed efficiency 
+>- Chapter 3 - Speed efficiency 
 >  *Lesson 3.1 -  Looping with iterrows
 >    *A learning objective:  Perform actions for every row of the DataFrame using 
    the  iterrows function to improve the speed of iterating a DataFrame's rows 
