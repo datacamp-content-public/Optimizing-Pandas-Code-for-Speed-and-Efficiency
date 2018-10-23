@@ -19,12 +19,12 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 ### 1. What problem(s) will students learn how to solve? (minimum of 5 problems)
 
-- [ ] Write a list of ideas for problems that the students will encounter in the course.
-> From a course on fraud detection:
->
->- How to identify and predict fraudulent transactions
->- How to effectively work with highly imbalanced data
-
+[//]: <> ( - [ ] Write a list of ideas for problems that the students will encounter in the course. )
+>- How to select specific columns and rows of a DataFrame
+>- How to select random columns and rows of a DataFrame
+>- How to iterate accross all the rows of a DataFrame efficiently
+>- How to merge and concatinate DataFrames 
+>- How to group the entries of a DataFrame and apply functions and transformations
 
 ### 2. What are the learning objectives of the course?
 
@@ -32,8 +32,8 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 >Example from our scikit-learn course:
 >
->- Learn the key concepts of supervised learning and how to implement them on real-world datasets;
->- Learn to distinguish regression from classification problems;
+>- Learn the difference between DataFrame and Series as Pandas objects
+>- Learn how to merge and concatinate DataFrames based on index and how to deal with mis
 >- Learn to evaluate how well your classification and regression modes perform;
 >- Learn best practices in supervised learning, such as splitting into test/train sets and k-fold cross validation;
 >- Learn how to improve model performance by both preprocessing your data and regularizing your models.
