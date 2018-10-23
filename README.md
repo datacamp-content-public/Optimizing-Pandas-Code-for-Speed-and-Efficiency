@@ -80,9 +80,9 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 >Example from a course on generalized additive models:
 >
->The difference between Pandas DataFrame and Pandas Series
->The difference between a function appleid to an object and a function that is part of the class of an object
->The difference between brute looping and looping efficently using iterrows
+>- The difference between Pandas DataFrame and Pandas Series
+>- The difference between a function appleid to an object and a function that is part of the class of an object
+>- The difference between brute looping and looping efficently using iterrows
 
 
 ### 7. What datasets will you use? 
