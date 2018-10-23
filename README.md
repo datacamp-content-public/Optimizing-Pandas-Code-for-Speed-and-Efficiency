@@ -33,6 +33,7 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 >Example from our scikit-learn course:
 >
 >- Learn the difference between DataFrame and Series as Pandas objects
+>- Learn the difference between an entry and a feature of a DataFrame
 >- Learn how to merge and concatinate DataFrames based on the indices
 >- Learn how to iterate through DataFrames' with alternatives than brute looping
 >- Learn how to apply fucntions in more than one column efficiently
@@ -74,6 +75,7 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 >Signal and noise - It's like trying to hear someone across a crowded room. Remove the noise, and you can easily understand what they are telling you.
 
 
+
 ### 6. What mistakes or misconceptions do you expect? 
 
 - [ ] Write a list of common mistakes _(minimum of two)_ that you think students will make. These can be programming mistakes, conceptual misunderstandings, or simply examples of things that are unintuitive. 
@@ -91,7 +93,12 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 
 - [ ] Upload these datasets to your course on the Teach Editor. 
 
-![teach_editor_datasets_upload](https://user-images.githubusercontent.com/20912644/44154482-d2e04b3a-a078-11e8-8ff9-2944fdcabeae.png)
+![Popular baby names](https://data.cityofnewyork.us/Health/Popular-Baby-Names/25th-nujf)
+Will be used for the basic location functions, and by the groupby family of functions
+
+![Poker hand combinations](https://archive.ics.uci.edu/ml/datasets/Poker+Hand)
+Will be used for random column selection, iterating over the entreis of a dataframe 
+
 
 Please avoid [overused datasets](https://authoring.datacamp.com/courses/design/brainstorming-datasets.html).
 
