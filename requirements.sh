@@ -4,10 +4,9 @@ set -e
 # Install specific package versions with pip
 # Check the latest version using https://pypi.org/search
 
-pip3 install pandas==0.23.3
+pip3 install pandas==0.23.4
 pip3 install matplotlib==2.2.2
-pip3 install numpy==1.15.0 
-
+pip3 install numpy==1.15.1 
 
 
 # Include datasets in the image
