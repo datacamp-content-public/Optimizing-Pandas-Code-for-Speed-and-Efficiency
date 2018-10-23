@@ -125,7 +125,7 @@ A typical lesson is comprised of:
 
 > Example from a course on interactive data visualization using leaflet
 
-> Chapter 1 - Using in-built functions to select columns and rows
+>- Chapter 1 - Using in-built functions to select columns and rows
 >  *Lesson 1.1 - Locate targeted rows
 >    *A learning objective:  Locate and select columns of a DataFrame with specific 
 >  characteristics 
@@ -134,7 +134,7 @@ A typical lesson is comprised of:
 >  *Lesson 1.3 - Select random rows or columns 
 >    *A learning objective:  Select random rows or columns randomly (or with weights) using pandas in-built functions
     
->Chapter 2 - Join DataFrames using concatenate, join and merge
+>-Chapter 2 - Join DataFrames using concatenate, join and merge
 >  *Lesson 2.1 - Concatenate DataFrames
 >    *A learning objective:  Stack DataFrames using the concatenate  function and understand how to tune the parameters to deal with the axis and the indices
 >  *Lesson 2.2 - Merge DataFrames
@@ -155,7 +155,7 @@ A typical lesson is comprised of:
 >*Lesson 3.4 - Vectorization with NumPy arrays
 >  *A learning objective: Integrate numpy properties of pandas to improve further speed improvement on applying functions to Pandas series (or whole DataFrames) using the numpy library
 
->Chapter 4 - Perform data manipulation for different groups using the groupby function
+>- Chapter 4 - Perform data manipulation for different groups using the groupby function
 >  *Lesson 4.1 - Aggregation using groupby
 >    * A learning objective: Group data according to specific attributes or     characteristics and compute a summary statistic (or statistics) for each group efficiently (e.g. counts/sum/mean)
 >  *Lesson 4.2 - Data transformation using groupby
