@@ -126,42 +126,42 @@ A typical lesson is comprised of:
 > Example from a course on interactive data visualization using leaflet
 
 >- Chapter 1 - Using in-built functions to select columns and rows
->  *Lesson 1.1 - Locate targeted rows
->    *A learning objective:  Locate and select columns of a DataFrame with specific 
+>  * Lesson 1.1 - Locate targeted rows
+>    * A learning objective:  Locate and select columns of a DataFrame with specific 
 >  characteristics 
->  *Lesson 1.2 - Locate targeted rows
->    *A learning objective:  Locate and select rows of a DataFrame based on index with specific characteristics 
->  *Lesson 1.3 - Select random rows or columns 
->    *A learning objective:  Select random rows or columns randomly (or with weights) using pandas in-built functions
+>  * Lesson 1.2 - Locate targeted rows
+>    * A learning objective:  Locate and select rows of a DataFrame based on index with specific characteristics 
+>  * Lesson 1.3 - Select random rows or columns 
+>    * A learning objective:  Select random rows or columns randomly (or with weights) using pandas in-built functions
     
 >- Chapter 2 - Join DataFrames using concatenate, join and merge
->  *Lesson 2.1 - Concatenate DataFrames
->    *A learning objective:  Stack DataFrames using the concatenate  function and understand how to tune the parameters to deal with the axis and the indices
->  *Lesson 2.2 - Merge DataFrames
->    *A learning objective: Merge DataFrames  in a database style using the merge  function and understand how to tune the parameters to deal with the axis and the indices
->  *Lesson 2.3 - Join DataFrames
->    *A learning objective:  Merge DataFrames with different indices in database style using the join function and understand how to tune the parameters to deal with the axis
+>  * Lesson 2.1 - Concatenate DataFrames
+>    * A learning objective:  Stack DataFrames using the concatenate  function and understand how to tune the parameters to deal with the axis and the indices
+>  * Lesson 2.2 - Merge DataFrames
+>    * A learning objective: Merge DataFrames  in a database style using the merge  function and understand how to tune the parameters to deal with the axis and the indices
+>  * Lesson 2.3 - Join DataFrames
+>    * A learning objective:  Merge DataFrames with different indices in database style using the join function and understand how to tune the parameters to deal with the axis
     
 >- Chapter 3 - Speed efficiency 
->  *Lesson 3.1 -  Looping with iterrows
->    *A learning objective:  Perform actions for every row of the DataFrame using 
+>  * Lesson 3.1 -  Looping with iterrows
+>    * A learning objective:  Perform actions for every row of the DataFrame using 
    the  iterrows function to improve the speed of iterating a DataFrame's rows 
    compared to crude looping
->  *Lesson 3.2 - Looping with apply
->    *A learning objective: Apply functions to a targeted columns set of a 
+>  * Lesson 3.2 - Looping with apply
+>    * A learning objective: Apply functions to a targeted columns set of a 
     DataFrame by using the apply function, which will speed up the operations
->  *Lesson 3.3 - Vectorization over Pandas series
->    *A learning objective: Executing operations and apply functions on entire columns, resulting to further speed improvement
+>  * Lesson 3.3 - Vectorization over Pandas series
+>    * A learning objective: Executing operations and apply functions on entire columns, resulting to further speed improvement
 >*Lesson 3.4 - Vectorization with NumPy arrays
->  *A learning objective: Integrate numpy properties of pandas to improve further speed improvement on applying functions to Pandas series (or whole DataFrames) using the numpy library
+>  * A learning objective: Integrate numpy properties of pandas to improve further speed improvement on applying functions to Pandas series (or whole DataFrames) using the numpy library
 
 >- Chapter 4 - Perform data manipulation for different groups using the groupby function
 >  *Lesson 4.1 - Aggregation using groupby
 >    * A learning objective: Group data according to specific attributes or     characteristics and compute a summary statistic (or statistics) for each group efficiently (e.g. counts/sum/mean)
->  *Lesson 4.2 - Data transformation using groupby
->   *A learning objective: Perform some group-specific computations and manipulations (e.g. standardization/NA imputation ) efficiently
->   *Lesson 4.3 - Data filtration using groupby
->   *A learning objective: Discard some groups efficiently , according to a group-wise computation that evaluates True or False (e.g. discard data that belongs to groups with only a few members)
+>  * Lesson 4.2 - Data transformation using groupby
+>   * A learning objective: Perform some group-specific computations and manipulations (e.g. standardization/NA imputation ) efficiently
+>   * Lesson 4.3 - Data filtration using groupby
+>   * A learning objective: Discard some groups efficiently , according to a group-wise computation that evaluates True or False (e.g. discard data that belongs to groups with only a few members)
 
   
   - [ ] Does each lesson have a clear learning objective?
