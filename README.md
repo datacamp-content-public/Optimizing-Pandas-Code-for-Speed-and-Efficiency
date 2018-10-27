@@ -1,4 +1,4 @@
-# **Optimizing Pandas Code for Speed and Efficiency**<br/>by **Leonidas Souliotis**
+# **Optimizing Pandas code for speed and efficiency**<br/>by **Leonidas Souliotis**
 
 README and sample lesson deadline: YYYY-MM-DD 
 
@@ -20,11 +20,11 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 ### 1. What problem(s) will students learn how to solve? (minimum of 5 problems)
 
 - [ ] Write a list of ideas for problems that the students will encounter in the course
->- How to select specific columns and rows of a DataFrame
->- How to select random columns and rows of a DataFrame
->- How to iterate accross all the rows of a DataFrame efficiently
->- How to merge and concatinate DataFrames 
->- How to group the entries of a DataFrame and apply functions and transformations
+>- How to select specific of the available data
+>- How to select random entries or features of the available data
+>- How to iterate accross all the data efficiently
+>- How to combine data from multiple sources for analysis
+>- How to group data according to a specific attribute
 
 ### 2. What are the learning objectives of the course?
 
@@ -34,12 +34,15 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 >
 >- Learn the difference between DataFrame and Series as Pandas objects
 >- Learn the difference between an entry and a feature of a DataFrame
->- Learn how to merge and concatinate DataFrames based on the indices
->- Learn how to iterate through DataFrames' with alternatives than brute looping
->- Learn how to apply fucntions in more than one column efficiently
->- Learn how to group DataFrames according to the values of a specific column (feature)
->- Learn how to impute the missing values of a grouped object
+>- Learn how to merge and concatinate DataFrames based on the indices using `.join`,`.merge` and `cooncat` functions
+>- Learn how to iterate through DataFrames' with alternatives than brute looping using the `iterrows` function
+>- Learn how to evaluate the efficiency of the code in terms of speed using the `%timeit` fucntion
+>- Learn how to apply fucntions in more than one column efficiently using the `.apply` function
+>- Learn how to group DataFrames according to the values of a specific characteristic using the `.gropuby` function
+>- Learn how to impute the missing values of a grouped object using the `.transform` function
 >- Learn how to apply fucntions and transformations on a grouped object
+
+
 ### 3. What technologies, packages, or functions will students use? Please be exhaustive.
 
 - [ ] Write a list of ideas for technologies that you want to use in the course. Include things like R/Python packages, SQL modules, or Google Sheets add-ons. If there are any important functions, methods, or commands that you want to teach, you can mention them here.
@@ -58,6 +61,7 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 >- mean, sum, min, max, count
 >-matplotlib
 
+
 ### 4. What terms or jargon will you define?
 
 - [ ] Write a list of technical terms, jargon, and acronyms that will be used in the course.
@@ -66,15 +70,13 @@ This part of the 'Course Spec' process is designed to help guide you through cou
 >
 >DataFrame, Series, Random sampling, Vectorization, Data transformation
 
-
 ### 5. What analogies or heuristics will you use?
 
 - [ ] Write a list of analogies for concepts, heuristics for best practices, and any other non-technical explanations of things that may be helpful to students _(minimum of two)_.
 
->Merge DataFrames according to indices - It's like trying to assign a feature in an entry that does not exists
->Brute looping - It's like trying to read each entry of the DataFrame one by one, reading one index per time
->Groued object - It's like organising the entries of a DataFrame in 'boxes', and each box contains all the entries that share a common value for the selected DataFrame feature
-
+>- Merge DataFrames according to indices - Image each index is a person; if you would like to give this person a set of characteristics, you should be sure that you assign the correct attributes to the person you want
+>- Brute looping - It's like trying to read each entry of the DataFrame one by one, reading one index per time
+>- Grouped object - It's like organising the entries of a DataFrame in 'boxes', and each box contains all the entries that share a common value for the selected DataFrame feature
 
 
 ### 6. What mistakes or misconceptions do you expect? 
@@ -113,7 +115,7 @@ Terms like "beginner" and "expert" mean different things to different people, so
 Choose the appropriate learners for your course by following this link to [learner personas](https://authoring.datacamp.com/courses/design/personas.html)
 
 * Coder Chen: As there is no substantial statistical content in the course, this person's strong coding background would fit the course perfectly
-* Advanced Alex: As this person has already worked with the basic of data science (both in theory and in practice), this course is ideal for this person; as the content of this course is highly applied and can be used to industry
+* Mathematical Marta: As this person knows the basics (as she has 'been able to fill in the gaps in her knowledge') she will benefit from this course as she is confident with the basics, but not using them efficiently
 
 ## Step 3: Course outline
 
@@ -134,28 +136,31 @@ A typical lesson is comprised of:
 > Example from a course on interactive data visualization using leaflet
 
 >- Chapter 1 - Using in-built functions to select columns and rows
->  * Lesson 1.1 - Locate targeted rows
+>  * Lesson 1.1 - Why need efficient Pnadas code and how to measure efficiancy
+     * A learning objective: Understand the motivation for writting efficient Pandas code and measure the efficiancy in terms of time using the `%timeit` function
+>  * Lesson 1.2 - Locate targeted rows using the `.iloc` function
 >    * A learning objective:  Locate and select columns of a DataFrame with specific 
 >  characteristics 
->  * Lesson 1.2 - Locate targeted rows
+>  * Lesson 1.3 - Locate and select columns of a DataFrame with specific 
+>  characteristics using the `.loc` function compared to `df[df.column == ‘attribute’]`
 >    * A learning objective:  Locate and select rows of a DataFrame based on index with specific characteristics 
->  * Lesson 1.3 - Select random rows or columns 
+>  * Lesson 1.4 - Select random rows or columns 
 >    * A learning objective:  Select random rows or columns randomly (or with weights) using pandas in-built functions
     
 >- Chapter 2 - Join DataFrames using concatenate, join and merge
->  * Lesson 2.1 - Concatenate DataFrames
+>  * Lesson 2.1 - Concatenate DataFrames using the `.concat` function
 >    * A learning objective:  Stack DataFrames using the concatenate  function and understand how to tune the parameters to deal with the axis and the indices
->  * Lesson 2.2 - Merge DataFrames
+>  * Lesson 2.2 - Merge DataFrames using the `.merge` function
 >    * A learning objective: Merge DataFrames  in a database style using the merge  function and understand how to tune the parameters to deal with the axis and the indices
->  * Lesson 2.3 - Join DataFrames
+>  * Lesson 2.3 - Join DataFrames using the `.join` function
 >    * A learning objective:  Merge DataFrames with different indices in database style using the join function and understand how to tune the parameters to deal with the axis
     
 >- Chapter 3 - Speed efficiency 
->  * Lesson 3.1 -  Looping with iterrows
+>  * Lesson 3.1 -  Looping using the `iterrows` function
 >    * A learning objective:  Perform actions for every row of the DataFrame using 
    the  iterrows function to improve the speed of iterating a DataFrame's rows 
    compared to crude looping
->  * Lesson 3.2 - Looping with apply
+>  * Lesson 3.2 - Looping using the `apply` function
 >    * A learning objective: Apply functions to a targeted columns set of a 
     DataFrame by using the apply function, which will speed up the operations
 >  * Lesson 3.3 - Vectorization over Pandas series
@@ -163,12 +168,12 @@ A typical lesson is comprised of:
 >*Lesson 3.4 - Vectorization with NumPy arrays
 >  * A learning objective: Integrate numpy properties of pandas to improve further speed improvement on applying functions to Pandas series (or whole DataFrames) using the numpy library
 
->- Chapter 4 - Perform data manipulation for different groups using the groupby function
->  * Lesson 4.1 - Aggregation using groupby
+>- Chapter 4 - Perform data manipulation for different groups using the `.groupby` function
+>  * Lesson 4.1 - Aggregation using `.groupby().aggregate` fucntion
 >    * A learning objective: Group data according to specific attributes or     characteristics and compute a summary statistic (or statistics) for each group efficiently (e.g. counts/sum/mean)
->  * Lesson 4.2 - Data transformation using groupby
+>  * Lesson 4.2 - Data transformation using `.groupby().transform`
 >   * A learning objective: Perform some group-specific computations and manipulations (e.g. standardization/NA imputation ) efficiently
->   * Lesson 4.3 - Data filtration using groupby
+>   * Lesson 4.3 - Data filtration using `.groupby().filter`
 >   * A learning objective: Discard some groups efficiently , according to a group-wise computation that evaluates True or False (e.g. discard data that belongs to groups with only a few members)
 
   
@@ -290,23 +295,21 @@ Having created your sample lesson, you should now have a much better understandi
 **Course Description**
 
 Add a one-paragraph description of the course in the [course.yml](course.yml) file following `description:`.
+Please review these guidelines when creating it: https://instructor-support.datacamp.com/courses/course-design/datacamp-course-descriptions
 
 > An example from a course analyzing survey data
 
 ```
-description: You've taken a survey (or 1000) before, right? Have you ever wondered
-  what goes into designing a survey and how survey responses are turned into actionable
-  insights? Of course you have! In Analyzing Survey Data in R, you will work with
-  surveys from A to Z, starting with common survey design structures, such as clustering
-  and stratification, and will continue through to visualizing and analyzing survey
-  results. You will model survey data from the National Health and Nutrition Examination
-  Survey using R's survey and tidyverse packages. Following the course, you will be
-  able to successfully interpret survey results and finally find the answers to life's
-  burning questions!
+description: Data is an asset, but without ways to process it, its value is questionable. The ability to eficiently work with
+big datasests and exctract valuable information is an indispensable tool for every aspiring data scientist. Pandas, a 
+fantastic analystics library, had gotten a nasty reputation for being “slow”. This course will  build on your basic knowledge 
+of Python and t he Pandas library and introduce you to more efficient builtin Pandas functionsto perform tasks faster. From 
+simple tasks, like targeting specific entries and features from the data, to apply functions in groups of entries, they can 
+all be performed without a simple for loop. By the end of this course, big datasets will not seem as scary with all the tools
+you will acquire.
 ```
 
 **Prerequisites**
 
 - [Intro to Python for Data Science](https://www.datacamp.com/courses/intro-to-python-for-data-science)
 - [Intermediate Python for Data Science](https://www.datacamp.com/courses/intermediate-python-for-data-science)
-- Other prerequisite courses
