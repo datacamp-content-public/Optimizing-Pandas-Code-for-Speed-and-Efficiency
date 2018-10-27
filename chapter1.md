@@ -87,5 +87,44 @@ xp: 100
 `@pre_exercise_code`
 ```{python}
 import pandas as pd
+```
 
+***
+
+```yaml
+type: NormalExercise
+key: 40cd3d5b00
+xp: 100
+```
+
+`@instructions`
+- Define the total number of possible hands as N
+- Select 120 random hands  using `np.random.randint` function and assign them to a new subseet
+
+`@hint`
+Remember the difference between `.loc` and `.iloc`; indices here are strings
+
+`@sample_code`
+```{python}
+# total number of hands
+N = 
+# number of hands we want to subsample
+size = 
+
+# Assign the samples in a new object
+data_subsample = 
+```
+
+`@solution`
+```{python}
+N = data.shape[0]
+size = 125
+data_subsample = data.loc[np.random.randint(data.shape[0],size = size)]
+```
+
+`@sct`
+```{python}
+Ex().check_df("data_subsample").multi(
+    check_keys("S1").has_equal_value(),
+)
 ```
