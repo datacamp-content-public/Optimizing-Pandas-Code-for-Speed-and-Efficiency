@@ -125,6 +125,6 @@ data_subsample = data.loc[np.random.randint(data.shape[0],size = size)]
 `@sct`
 ```{python}
 Ex().check_df("data_subsample").multi(
-    check_keys("S1").has_equal_value(),
+    check_keys("data_subsample.index").has_equal_value(),
 )
 ```
