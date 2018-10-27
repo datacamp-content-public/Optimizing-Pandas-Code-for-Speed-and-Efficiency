@@ -77,8 +77,77 @@ xp: 50
 ## Capstone exercise for Chapter 1
 
 ```yaml
+type: MultipleChoiceExercise
+key: 5c60bc305e
+xp: 50
+```
+
+Which of the following statements holds, when we want to randomly select 485 rows from the `data` dataframe?
+
+`@possible_answers`
+- `np.random.randint()` function is faster in a magnitude of 1 decimal point 
+- In built `.sample` function from pandas is faster in a magnitude of 1 decimal point 
+- `np.random.randint()` function is faster in a magnitude of 3 decimal point 
+- In built `.sample` function from pandas is faster in a magnitude of 2 decimal point
+
+`@hint`
+Rember, the timing starts just before the action is triggered as start_time = time.time()
+
+`@pre_exercise_code`
+```{python}
+import pandas as pd
+import numpy as np
+import time
+
+data = pd.read_csv('poker_hand.csv')
+data.index = map(str, list(data.index))
+```
+
+`@sct`
+```{python}
+
+```
+
+---
+
+## Capstone exercise for Chapter 4
+
+```yaml
+type: MultipleChoiceExercise
+key: 3e7dda9e0e
+xp: 50
+```
+
+What is the mean size table, in the days when the mean amount payed to the restaurant is more than 20 USD?
+
+`@possible_answers`
+- 3.356
+- 2.668
+- 4.067
+- 2.185
+
+`@hint`
+Use  `.filter` fucntion from the `.groupby` family
+
+`@pre_exercise_code`
+```{python}
+import pamdas as pd
+df = pd.read_csv(
+   "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv")
+```
+
+`@sct`
+```{python}
+
+```
+
+---
+
+## Insert exercise title here
+
+```yaml
 type: TabExercise
-key: 80c15257c6
+key: db3b3773ca
 xp: 100
 ```
 
@@ -87,44 +156,99 @@ xp: 100
 `@pre_exercise_code`
 ```{python}
 import pandas as pd
+SA_2000_2010 = pd.read_csv('south_america_2000_2010.csv')#.drop(columns = ['2003'])
+NA_2000_2010 = pd.read_csv('north_america_2000_2010.csv')
+AS_2000_2015 = pd.read_csv('asia_2000_2015.csv').drop(columns=['2014','2011'])
+AM_2015 = pd.read_csv('americas_2015.csv')
 ```
 
 ***
 
 ```yaml
 type: NormalExercise
-key: 40cd3d5b00
-xp: 100
+key: 7d21bca855
+xp: 35
 ```
 
 `@instructions`
-- Define the total number of possible hands as N
-- Select 120 random hands  using `np.random.randint` function and assign them to a new subseet
+- Append the DataFrame containing the working hours of all the countries of South America to the North American equivalent, ignoring the indices
 
 `@hint`
-Remember the difference between `.loc` and `.iloc`; indices here are strings
+Did you remember to 'igone_index'?
 
 `@sample_code`
 ```{python}
-# total number of hands
-N = 
-# number of hands we want to subsample
-size = 
-
-# Assign the samples in a new object
-data_subsample = 
+americas_2000_2010 = 
 ```
 
 `@solution`
 ```{python}
-N = data.shape[0]
-size = 125
-data_subsample = data.loc[np.random.randint(data.shape[0],size = size)]
+americas_2000_2010 = NA_2000_2015.append(SA_2000_2015,ignore_index=True) 
 ```
 
 `@sct`
 ```{python}
-Ex().check_df("data_subsample").multi(
-    check_keys("data_subsample.index").has_equal_value(),
-)
+
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: 0afae3df54
+xp: 35
+```
+
+`@instructions`
+- To the DataFrame you created before, add the column that contains the working hours for all the American counties for 2015, which is contained in the df4 DataFrame
+
+`@hint`
+Type `df4.head()` or `df.columns()` so you can find the common column between the two DataFrames
+
+`@sample_code`
+```{python}
+americas_2000_2010_15 = 
+```
+
+`@solution`
+```{python}
+americas_2000_2010_15=pd.merge(americas_2000_2010,AM_2015,on='Country')
+```
+
+`@sct`
+```{python}
+
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: 25f492076a
+xp: 30
+```
+
+`@instructions`
+- Create a new DataFrame that contains the working hours of all counties of America and Asia (contained in the AS_2000_2015) only for those years that there is a value for both regions
+ - Report the mean working hours for all the available countries on 2009
+
+`@hint`
+You may want to set `join = 'inner'`, as we want only for those years that there is a value for both regions
+
+`@sample_code`
+```{python}
+full_wh
+
+mean_2009 = 
+```
+
+`@solution`
+```{python}
+full_wh = pd.concat([americas_2000_2010_15,df3],keys='Country',join='inner')
+mean_2009 = full_wh['2009'].mean()
+```
+
+`@sct`
+```{python}
+
 ```
