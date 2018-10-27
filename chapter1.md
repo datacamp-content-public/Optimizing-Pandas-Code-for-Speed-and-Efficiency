@@ -71,3 +71,21 @@ xp: 50
 
 `@projector_key`
 5ed7226ed2ea2bf05dd6a43695cdc726
+
+---
+
+## Capstone exercise for Chapter 1
+
+```yaml
+type: TabExercise
+key: 80c15257c6
+xp: 100
+```
+
+
+
+`@pre_exercise_code`
+```{python}
+import pandas as pd
+
+```
