@@ -156,8 +156,8 @@ xp: 100
 `@pre_exercise_code`
 ```{python}
 import pandas as pd
-SA_2000_2010 = pd.read_csv('south_america_2000_2010.csv')#.drop(columns = ['2003'])
 NA_2000_2010 = pd.read_csv('north_america_2000_2010.csv')
+SA_2000_2010 = pd.read_csv('south_america_2000_2010.csv')
 AS_2000_2015 = pd.read_csv('asia_2000_2015.csv').drop(columns=['2014','2011'])
 AM_2015 = pd.read_csv('americas_2015.csv')
 ```
