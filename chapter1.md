@@ -91,7 +91,7 @@ Which of the following statements holds, when we want to randomly select 485 row
 - In built `.sample` function from pandas is faster in a magnitude of 2 decimal point
 
 `@hint`
-Rember, the timing starts just before the action is triggered as start_time = time.time()
+Remember, the timing starts just before the action is triggered as start_time = time.time()
 
 `@pre_exercise_code`
 ```{python}
@@ -237,7 +237,7 @@ You may want to set `join = 'inner'`, as we want only for those years that there
 
 `@sample_code`
 ```{python}
-full_wh
+full_wh = 
 
 mean_2009 = 
 ```
