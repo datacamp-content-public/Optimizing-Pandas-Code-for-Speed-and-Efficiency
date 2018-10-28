@@ -82,16 +82,16 @@ key: 5c60bc305e
 xp: 50
 ```
 
-Which of the following statements holds, when we want to randomly select 485 rows from the `data` dataframe?
+Which of the following statements holds, when we want to randomly select 485 rows from the `data` DataFrame? (Select the closest that apply)
 
 `@possible_answers`
-- `np.random.randint()` function is faster in a magnitude of 1 decimal point 
-- In built `.sample` function from pandas is faster in a magnitude of 1 decimal point 
-- `np.random.randint()` function is faster in a magnitude of 3 decimal point 
-- In built `.sample` function from pandas is faster in a magnitude of 2 decimal point
+- `np.random.randint()` function is faster by ~ 400 μs
+-  In built `.sample` function from pandas is faster by ~ 100 μs
+- `np.random.randint()` function is faster by ~ 800 μs
+-  In built `.sample` function from pandas is faster is faster by ~ 100 μs
 
 `@hint`
-Remember, the timing starts just before the action is triggered as start_time = time.time()
+Remember to set `%%timeit` before you trigger each action
 
 `@pre_exercise_code`
 ```{python}
@@ -110,30 +110,52 @@ data.index = map(str, list(data.index))
 
 ---
 
-## Capstone exercise for Chapter 4
+## Capstone exercise for Chapter 3
 
 ```yaml
 type: MultipleChoiceExercise
-key: 3e7dda9e0e
+key: 42f8e20a38
 xp: 50
 ```
 
-What is the mean size table, in the days when the mean amount payed to the restaurant is more than 20 USD?
+If we want to calculate the mean rank for each hand played (row), which would be the fastest method to do it?
 
 `@possible_answers`
-- 3.356
-- 2.668
-- 4.067
-- 2.185
+- Looping using the `.iterrows()` fucntion
+- Looping using vectorization over NumPy arrays
+- Looping over DataFrame rows using indices (Crude looping)
+- Looping using vectorization over Pandas series
+- Looping using the apply() function
 
 `@hint`
-Use  `.filter` fucntion from the `.groupby` family
+Remember to set `axis = 1` when possible, as we want
 
 `@pre_exercise_code`
 ```{python}
-import pamdas as pd
-df = pd.read_csv(
-   "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv")
+import pandas as pd
+import numpy as np
+data = pd.read_csv('poker_hand.csv')
+
+# The columns that contain the rank for each hand is R1,R2,R3,R4,R5
+
+# Calculate the mean of each hand using  the `.iterrows()` fucntion
+mean_itrrows = 
+
+# Calculate the mean of each hand using vectorization over NumPy arrays
+mean_numpy = 
+
+# Calculate the mean of each hand looping over DataFrame rows using indices (Crude looping)
+mean_crude = 
+for row in range(0,data.shape[0]):
+  # write the formula here
+  temp = 
+  mean_crude.append(temp)
+  
+# Calculate the mean of each hand using vectorization over Pandas series
+mean_pandas = 
+
+# Calculate the mean of each hand using the apply() function
+mean_apply = 
 ```
 
 `@sct`
@@ -143,7 +165,7 @@ df = pd.read_csv(
 
 ---
 
-## Insert exercise title here
+## Capstone Exercise for Chapter 2
 
 ```yaml
 type: TabExercise
@@ -151,7 +173,7 @@ key: db3b3773ca
 xp: 100
 ```
 
-
+Bla bla bla
 
 `@pre_exercise_code`
 ```{python}
@@ -233,7 +255,7 @@ xp: 30
  - Report the mean working hours for all the available countries on 2009
 
 `@hint`
-You may want to set `join = 'inner'`, as we want only for those years that there is a value for both regions
+You want to set `join = 'inner'`, as we want only for those years that there is a value for both regions
 
 `@sample_code`
 ```{python}
@@ -246,6 +268,39 @@ mean_2009 =
 ```{python}
 full_wh = pd.concat([americas_2000_2010_15,df3],keys='Country',join='inner')
 mean_2009 = full_wh['2009'].mean()
+```
+
+`@sct`
+```{python}
+
+```
+
+---
+
+## Capstone exercise for Chapter 4
+
+```yaml
+type: MultipleChoiceExercise
+key: 3e7dda9e0e
+xp: 50
+```
+
+What is the mean size table, in the days when the mean amount payed to the restaurant is more than 20 USD?
+
+`@possible_answers`
+- 3.356
+- 2.668
+- 4.067
+- 2.185
+
+`@hint`
+Use  `.filter` fucntion from the `.groupby` family
+
+`@pre_exercise_code`
+```{python}
+import pamdas as pd
+df = pd.read_csv(
+   "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv")
 ```
 
 `@sct`
