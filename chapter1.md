@@ -67,8 +67,7 @@ skills: 2
 Using the `.groupby` functions instead of crude looping all the rows of our data speed up the process by an enormous magnitude. In this exercise, we will compare the performance of both methods and prove the efficiency (both in terms of speed and of code cleanness) of the `.groupby` family of functions.
 
 
-We will use the "Popular Baby Names" dataset, which includes 
-
+We will use the "Popular Baby Names" dataset, which includes
 
 `@instructions`
 - Instruction 1
@@ -187,7 +186,6 @@ Using the `.groupby` functions instead of crude looping all the rows of our data
 
 
 We will use the "Popular Baby Names" dataset, which includes, among others, the most popular names in the US by year, gender and Ethnicity, and we find home many times the most popular name was given to a baby in each year
-
 
 `@pre_exercise_code`
 ```{python}
