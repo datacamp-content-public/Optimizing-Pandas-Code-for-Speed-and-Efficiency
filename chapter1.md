@@ -118,6 +118,66 @@ success_msg("Some praise! Then reinforce a learning objective from the exercise.
 ## Insert exercise title here
 
 ```yaml
+type: NormalExercise
+key: f88bd1ae1d
+xp: 100
+```
+
+In this exercise, we want to apply a normalization transformation to the number of appearances of each name for each year separately. That 
+
+For convenience, we put the year of birth characteristic as the index
+
+`@instructions`
+- Group the observations according to the indices (Year of Birth)
+- Perform a normal standardization on the number of appearence of each name (Count), by subtracting the groups' mean and divide by the standard deviation 
+- Present the standardized mean gor each year seprately
+
+`@hint`
+
+
+`@pre_exercise_code`
+```{python}
+import pandas as pd
+import numpy as np
+data = pd.read_csv('Popular_Baby_Names.csv')
+
+data.index = data['Year of Birth']
+data.drop(columns=['Year of Birth'],inplace=True)
+data.head()
+```
+
+`@sample_code`
+```{python}
+#define the z transformation
+z_score = lambda x: ___
+key = lambda x: x
+#perform the grouping function
+grouped = ___
+# perform the normaization transformation
+transformed = ___
+# Group again by the year of birth and calculate the mean
+transformed_groups = ___.mean()
+```
+
+`@solution`
+```{python}
+zscore = lambda x: (x - x.mean()) / x.std()
+key = lambda x: x
+grouped = data.groupby(key)['Count']
+transformed = grouped.transform(zscore)
+transformed_groups = transformed.groupby(key).mean()
+```
+
+`@sct`
+```{python}
+print("Well Done! The mean for each group should be really close to 0, that shouldn't be a surprise")
+```
+
+---
+
+## Insert exercise title here
+
+```yaml
 type: TabExercise
 key: 7ad225523c
 xp: 100
