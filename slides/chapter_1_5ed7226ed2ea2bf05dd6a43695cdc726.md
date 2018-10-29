@@ -97,7 +97,7 @@ Let's take as an example, the iris dataset, which consists of 150 entries, each 
 
 
 ---
-## Aggregation using _groupby_ 
+## Aggregation using _groupby_
 
 ```yaml
 type: "TwoColumns"
@@ -219,7 +219,7 @@ If we compare the time taken for each method, we can clearly see that using the 
 
 
 ---
-## Transfromation using groupby
+## Transfromation using groupby (1)
 
 ```yaml
 type: "FullCodeSlide"
@@ -248,7 +248,7 @@ As a last operation, we will transformed a grpouped obejct according to a transf
 
 
 ---
-## Transformation using groupby
+## Transformation using groupby (2)
 
 ```yaml
 type: "TwoRows"

@@ -16,105 +16,7 @@ xp: 50
 
 ---
 
-## Insert exercise title here
-
-```yaml
-type: NormalExercise
-key: 4212b9f15a
-xp: 100
-```
-
-
-
-`@instructions`
-
-
-`@hint`
-
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{python}
-
-```
-
-`@solution`
-```{python}
-
-```
-
-`@sct`
-```{python}
-
-```
-
----
-
-## Sample exercise 1
-
-```yaml
-type: NormalExercise
-key: c909bf2ad1
-lang: python
-xp: 100
-skills: 2
-```
-
-Using the `.groupby` functions instead of crude looping all the rows of our data speed up the process by an enormous magnitude. In this exercise, we will compare the performance of both methods and prove the efficiency (both in terms of speed and of code cleanness) of the `.groupby` family of functions.
-
-
-We will use the "Popular Baby Names" dataset, which includes
-
-`@instructions`
-- Instruction 1
-- Instruction 2
-- Instruction 3
-
-`@hint`
-- Here is the hint for this setup problem. 
-- It should get students 50% of the way to the correct answer.
-- So don't provide the answer, but don't just reiterate the instructions.
-- Typically one hint per instruction is a sensible amount.
-
-`@pre_exercise_code`
-```{python}
-# Load datasets and packages here.
-```
-
-`@sample_code`
-```{python}
-# Your
-# sample
-# code
-# should
-# be
-# ideally
-# 10 lines or less,
-# with a max
-# of 16 lines.
-```
-
-`@solution`
-```{python}
-# Answer goes here
-# Make sure to match the comments with your sample code
-# to help students see the differences from solution
-# to given.
-```
-
-`@sct`
-```{python}
-# Update this to something more informative.
-success_msg("Some praise! Then reinforce a learning objective from the exercise.")
-```
-
----
-
-## Insert exercise title here
+## Sample Exercise 2
 
 ```yaml
 type: NormalExercise
@@ -174,7 +76,7 @@ print("Well Done! The mean for each group should be really close to 0, that shou
 
 ---
 
-## Insert exercise title here
+## Sample Exercise 1
 
 ```yaml
 type: TabExercise
@@ -241,7 +143,7 @@ for row in data.iterrows():
 
 `@sct`
 ```{python}
-print("You made it, well done! But, let's explore enother way to do the same task")
+print("You made it, well done! But, let's explore another way to do the same task")
 ```
 
 ***
@@ -272,7 +174,7 @@ max_years = obj['Count'].max()
 
 `@sct`
 ```{python}
-print('Congratulations, you did it again! But more eeficiantly this time')
+print('Congratulations, you did it again! But more eficiantly this time')
 ```
 
 ---
@@ -304,60 +206,6 @@ import time
 
 data = pd.read_csv('poker_hand.csv')
 data.index = map(str, list(data.index))
-```
-
-`@sct`
-```{python}
-
-```
-
----
-
-## Capstone exercise for Chapter 3
-
-```yaml
-type: MultipleChoiceExercise
-key: 42f8e20a38
-xp: 50
-```
-
-If we want to calculate the mean rank for each hand played (row), which would be the fastest method to do it?
-
-`@possible_answers`
-- Looping using the `.iterrows()` fucntion
-- Looping using vectorization over NumPy arrays
-- Looping over DataFrame rows using indices (Crude looping)
-- Looping using vectorization over Pandas series
-- Looping using the apply() function
-
-`@hint`
-Remember to set `axis = 1` when possible, as we want
-
-`@pre_exercise_code`
-```{python}
-import pandas as pd
-import numpy as np
-data = pd.read_csv('poker_hand.csv')
-
-# The columns that contain the rank for each hand is R1,R2,R3,R4,R5
-
-# Calculate the mean of each hand using  the `.iterrows()` fucntion
-mean_itrrows = ___
-
-# Calculate the mean of each hand using vectorization over NumPy arrays
-mean_numpy = ___
-
-# Calculate the mean of each hand looping over DataFrame rows using indices (Crude looping)
-mean_crude = ___
-for row in range(0,data.shape[0]):
-  temp = ___
-  mean_crude.append(temp)
-  
-# Calculate the mean of each hand using vectorization over Pandas series
-mean_pandas = ___
-
-# Calculate the mean of each hand using the apply() function
-mean_apply = ___
 ```
 
 `@sct`
@@ -472,6 +320,60 @@ mean_2009 = ___
 ```{python}
 full_wh = pd.concat([americas_2000_2010_15,df3],keys='Country',join='inner')
 mean_2009 = full_wh['2009'].mean()
+```
+
+`@sct`
+```{python}
+
+```
+
+---
+
+## Capstone exercise for Chapter 3
+
+```yaml
+type: MultipleChoiceExercise
+key: 42f8e20a38
+xp: 50
+```
+
+If we want to calculate the mean rank for each hand played (row), which would be the fastest method to do it?
+
+`@possible_answers`
+- Looping using the `.iterrows()` fucntion
+- Looping using vectorization over NumPy arrays
+- Looping over DataFrame rows using indices (Crude looping)
+- Looping using vectorization over Pandas series
+- Looping using the apply() function
+
+`@hint`
+Remember to set `axis = 1` when possible, as we want
+
+`@pre_exercise_code`
+```{python}
+import pandas as pd
+import numpy as np
+data = pd.read_csv('poker_hand.csv')
+
+# The columns that contain the rank for each hand is R1,R2,R3,R4,R5
+
+# Calculate the mean of each hand using  the `.iterrows()` fucntion
+mean_itrrows = ___
+
+# Calculate the mean of each hand using vectorization over NumPy arrays
+mean_numpy = ___
+
+# Calculate the mean of each hand looping over DataFrame rows using indices (Crude looping)
+mean_crude = ___
+for row in range(0,data.shape[0]):
+  temp = ___
+  mean_crude.append(temp)
+  
+# Calculate the mean of each hand using vectorization over Pandas series
+mean_pandas = ___
+
+# Calculate the mean of each hand using the apply() function
+mean_apply = ___
 ```
 
 `@sct`
