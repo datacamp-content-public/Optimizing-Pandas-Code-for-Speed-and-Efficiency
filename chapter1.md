@@ -3,7 +3,58 @@ title: Test
 description: Test
 ---
 
-## An exercise title written in sentence case
+## Perform data manipulation for different groups using the `.groupby` function (Video Lesson)
+
+```yaml
+type: VideoExercise
+key: 03d3d25bba
+xp: 50
+```
+
+`@projector_key`
+5ed7226ed2ea2bf05dd6a43695cdc726
+
+---
+
+## Insert exercise title here
+
+```yaml
+type: NormalExercise
+key: 4212b9f15a
+xp: 100
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+`@pre_exercise_code`
+```{python}
+
+```
+
+`@sample_code`
+```{python}
+
+```
+
+`@solution`
+```{python}
+
+```
+
+`@sct`
+```{python}
+
+```
+
+---
+
+## Sample exercise 1
 
 ```yaml
 type: NormalExercise
@@ -13,8 +64,11 @@ xp: 100
 skills: 2
 ```
 
-This is the assignment text. It should help provide students with the background information needed.
-The instructions that follow should be in bullet point form with clear guidance for what is expected.
+Using the `.groupby` functions instead of crude looping all the rows of our data speed up the process by an enormous magnitude. In this exercise, we will compare the performance of both methods and prove the efficiency (both in terms of speed and of code cleanness) of the `.groupby` family of functions.
+
+
+We will use the "Popular Baby Names" dataset, which includes 
+
 
 `@instructions`
 - Instruction 1
@@ -61,16 +115,107 @@ success_msg("Some praise! Then reinforce a learning objective from the exercise.
 
 ---
 
-## Perform data manipulation for different groups using the _groupby_ function
+## Insert exercise title here
 
 ```yaml
-type: VideoExercise
-key: 03d3d25bba
+type: TabExercise
+key: 7ad225523c
+xp: 100
+```
+
+Using the `.groupby` functions instead of crude looping all the rows of our data speed up the process by an enormous magnitude. In this exercise, we will compare the performance of both methods and prove the efficiency (both in terms of speed and of code cleanness) of the `.groupby` family of functions.
+
+
+We will use the "Popular Baby Names" dataset, which includes, among others, the most popular names in the US by year, gender and Ethnicity, and we find home many times the most popular name was given to a baby in each year
+
+
+`@pre_exercise_code`
+```{python}
+import pandas as pd
+data = pd.read_csv('Popular_Baby_Names.csv').drop(columns=['Rank'])
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: f6713353a3
 xp: 50
 ```
 
-`@projector_key`
-5ed7226ed2ea2bf05dd6a43695cdc726
+`@instructions`
+Using the `iterrows()` function, find the how many times the most popular name was appeared in each year (year span from 2011 to 2013)
+
+`@hint`
+The row item has length = 2; the first one is the index of the row and the second includes the values for each column
+
+`@sample_code`
+```{python}
+max_11 = 0;
+max_12 = 0;
+max_13 = 0;
+for row in data.iterrows():
+    year = row[1]['Year of Birth']
+    count = row[1]['Count']
+    if year == ___ and max_11 < ___:
+        max_11 = count
+    if year == ___ and max_12 < ___:
+        max_12 = row[1]['Count']
+    if year == ___ and max_13 < ___:
+        max_13 = count  
+```
+
+`@solution`
+```{python}
+max_11 = 0;
+max_12 = 0;
+max_13 = 0;
+for row in data.iterrows():
+    year = row[1]['Year of Birth']
+    count = row[1]['Count']
+    if year == 2011 and max_11 < row[1]['Count']:
+        max_11 = count
+    if year == 2012 and max_12 < row[1]['Count']:
+        max_12 = count
+    if year == 2013 and max_13 < row[1]['Count']:
+        max_13 = count
+```
+
+`@sct`
+```{python}
+print("You made it, well done! But, let's explore enother way to do the same task")
+```
+
+***
+
+```yaml
+type: NormalExercise
+key: 25f6ae9a0e
+xp: 50
+```
+
+`@instructions`
+Using the `.groupby` function, find the how many times the most popular name was appeared in each year (year span from 2011 to 2013)
+
+`@hint`
+We want to find the maximum value from the Counts column
+
+`@sample_code`
+```{python}
+grouped_object = ___
+max_years = grouped_object___
+```
+
+`@solution`
+```{python}
+obj = data.groupby('Year of Birth')
+max_years = obj['Count'].max()
+```
+
+`@sct`
+```{python}
+print('Congratulations, you did it again! But more eeficiantly this time')
+```
 
 ---
 
