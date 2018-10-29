@@ -133,7 +133,7 @@ For convenience, we put the year of birth characteristic as the index
 - Present the standardized mean gor each year seprately
 
 `@hint`
-
+Remember to `.groupby(key)` and not by any column; we want to group according to index
 
 `@pre_exercise_code`
 ```{python}
@@ -344,23 +344,22 @@ data = pd.read_csv('poker_hand.csv')
 # The columns that contain the rank for each hand is R1,R2,R3,R4,R5
 
 # Calculate the mean of each hand using  the `.iterrows()` fucntion
-mean_itrrows = 
+mean_itrrows = ___
 
 # Calculate the mean of each hand using vectorization over NumPy arrays
-mean_numpy = 
+mean_numpy = ___
 
 # Calculate the mean of each hand looping over DataFrame rows using indices (Crude looping)
-mean_crude = 
+mean_crude = ___
 for row in range(0,data.shape[0]):
-  # write the formula here
-  temp = 
+  temp = ___
   mean_crude.append(temp)
   
 # Calculate the mean of each hand using vectorization over Pandas series
-mean_pandas = 
+mean_pandas = ___
 
 # Calculate the mean of each hand using the apply() function
-mean_apply = 
+mean_apply = ___
 ```
 
 `@sct`
@@ -378,7 +377,9 @@ key: db3b3773ca
 xp: 100
 ```
 
-Bla bla bla
+Concatenating, merging and joining DataFrames efficiently is a very important skill. In this exercise ,we will explore how we can merge data merge datasets by row or column and face situations where we merge DataFrames by column and there are indices in one DataFrame that do not belong to the other
+
+For this exercise, we will use 4 Datasets that contain the average working hour per person for different years and different countries. Let's merge all those DataFrame in one single DataFrame
 
 `@pre_exercise_code`
 ```{python}
@@ -405,7 +406,7 @@ Did you remember to 'igone_index'?
 
 `@sample_code`
 ```{python}
-americas_2000_2010 = 
+americas_2000_2010 = ___
 ```
 
 `@solution`
@@ -434,7 +435,7 @@ Type `df4.head()` or `df.columns()` so you can find the common column between th
 
 `@sample_code`
 ```{python}
-americas_2000_2010_15 = 
+americas_2000_2010_15 = ___
 ```
 
 `@solution`
@@ -464,9 +465,9 @@ You want to set `join = 'inner'`, as we want only for those years that there is 
 
 `@sample_code`
 ```{python}
-full_wh = 
+full_wh = ___
 
-mean_2009 = 
+mean_2009 = ___
 ```
 
 `@solution`
